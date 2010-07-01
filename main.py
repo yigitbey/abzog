@@ -12,15 +12,14 @@ protocols = {
     "yahoo": "prpl-yahoo",
 } # List of protocols: http://developer.pidgin.im/wiki/prpl_id
 
+### Config starts ###
 account_name = "grotiiy@jabber.org" # Must already be logged on.
 account_protocol = "jabber" # Change this with the platform
 message_to_send = "test" # Change this with your spam
-
+### Config ends ###
 
 account = purple.PurpleAccountsFind(account_name, protocols[account_protocol]) # Get the account information
-
 buddylist = purple.PurpleFindBuddies(account,'') # Get a list of all buddies
-
 
 for buddy in buddylist: # Sending a message to all online buddies
     if purple.PurpleBuddyIsOnline(buddy): 
